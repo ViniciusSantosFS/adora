@@ -10,6 +10,7 @@ import { GithubService } from './github.service';
 import { Repository } from 'typeorm';
 import { Task } from '../../../entities/task.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
+import { DeliveryService } from '../delivery.service';
 
 describe('GitHub Service', () => {
   let service: GithubService;
@@ -30,6 +31,7 @@ describe('GitHub Service', () => {
     const module: TestingModule = await Test.createTestingModule({
       providers: [
         GithubService,
+        DeliveryService,
         {
           provide: getRepositoryToken(Event),
           useFactory: repositoryMockFactory,
