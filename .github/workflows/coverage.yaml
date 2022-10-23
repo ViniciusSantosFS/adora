@@ -11,7 +11,7 @@ jobs:
         node-version: 14
     - name: Run Code Coverage & Report
       run: |
-        npm ci
+        npm install
         npm run test:cov
     - name: Send Report
       uses: codacy/codacy-coverage-reporter-action@v1
