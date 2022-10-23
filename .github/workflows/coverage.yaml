@@ -7,11 +7,9 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-      with:
-        node-version: 14
     - name: Run Code Coverage & Report
       run: |
-        npm install
+        npm install --legacy-peer-deps
         npm run test:cov
     - name: Send Report
       uses: codacy/codacy-coverage-reporter-action@v1
