@@ -1,9 +1,11 @@
 name: Deploy serveless app
 
 on:
-  push:
+  workflow_run:
+    workflows: [Code Coverage Report]
+    types: [completed]
     branches:
-      - master
+      - '*'
 
 jobs:
   deploy:
